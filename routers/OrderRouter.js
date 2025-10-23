@@ -1,5 +1,5 @@
 import express from "express";
-import { placeOrder, getOrderHistory } from "../controllers/orderController.js";
+import { placeOrder, getOrderHistory } from "../controllers/ordercontroller.js";
 
 const OrderRouter = express.Router();
 

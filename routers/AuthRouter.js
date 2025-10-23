@@ -1,5 +1,5 @@
 import router from "express";
-import {UserRouter} from "./UserRouter.js";
+import UserRouter from "./UserRouter.js";
 import ApiResponse from "../utils/ApiResponse.js";  
 import {verifyToken} from "../utils/JWTconfig.js";
 
@@ -21,6 +21,6 @@ authRouter.use((req,res,next)=>{
 });          
 
 
-router.use("/user",UserRouter);
+authRouter.use("/user", UserRouter);
 
-module.exports = authRouter;
+export default authRouter;

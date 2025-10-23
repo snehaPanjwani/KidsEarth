@@ -3,14 +3,14 @@ import ApiResponse from "../utils/ApiResponse.js";
 import {
   listProducts,
   getProductById
-} from ".../controllers/productController.js";
+} from "../controllers/productcontroller.js";
 import {
   addToCart,
   getCart,
   updateCartItem,
   removeCartItem
-} from "../controllers/cartController.js";
-import { placeOrder, getOrderHistory } from "../controllers/orderController.js";
+} from "../controllers/cartcontroller.js";
+import { placeOrder, getOrderHistory } from "../controllers/ordercontroller.js";
 
 const UserRouter = express.Router();
 
