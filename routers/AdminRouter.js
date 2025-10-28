@@ -7,7 +7,7 @@ import { Admin } from "../models/Admin.js";
 import { Product } from "../models/Product.js";
 import path from "path";
 import {v4 as uuidv4} from "uuid";
-import cloudinary from "..../config/cloudinary.js";
+import cloudinary from "../config/cloudinary.js";
 
 
 const router = Router();
