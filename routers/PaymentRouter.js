@@ -1,6 +1,6 @@
 import express from "express";
 import ApiResponse from "../utils/ApiResponse.js";
-import { processPayment } from "../controllers/paymentController.js";
+import { processPayment } from "../controllers/paymentcontroller.js";
 import { Order } from "../models/Order.js";
 
 const PaymentRouter = express.Router();
