@@ -6,7 +6,8 @@ import validator from "validator";
 import { Admin } from "../models/Admin.js";
 import { Product } from "../models/Product.js";
 import path from "path";
-import uuidv4 from "uuid";
+import { v4 as uuidv4 } from "uuid";
+
 
 
 const router = Router();
