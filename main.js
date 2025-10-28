@@ -19,8 +19,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(fileUpload());
-app.use("/images", express.static(path.join(process.cwd(), "images")));
+app.use(fileUpload({
+  useTempFiles: true,
+  tempFileDir: '/tmp/'
+}));
+// app.use("/images", express.static(path.join(process.cwd(), "images")));
 app.use("/admin", admin);
 app.use("/api", router);
 app.use("/auth", authRouter);

@@ -7,6 +7,7 @@ import { Admin } from "../models/Admin.js";
 import { Product } from "../models/Product.js";
 import path from "path";
 import {v4 as uuidv4} from "uuid";
+import cloudinary from "..../config/cloudinary.js";
 
 
 const router = Router();
@@ -69,11 +70,10 @@ router.post("/additem",async (req,res)=>{
         if (!allowedTypes.includes(reqfile.mimetype)) {
            return res.status(400).send('Invalid file type');
         }
-        const filename = uuidv4() + path.extname(reqfile.name);
-        const dir = 'images';
-        const filepath = path.join(dir,filename);
-        reqfile.mv(filepath);
-        const data = {...req.body,image: filepath,
+        const result = await cloudinary.uploader.upload(reqfile.tempFilePath, {
+            folder: "KidsEarth_Products",
+        });
+        const data = {...req.body,image: result.secure_url,
            status: req.body.status === "true" || req.body.status === true 
         };
         const newproduct = await Product.create(data);
