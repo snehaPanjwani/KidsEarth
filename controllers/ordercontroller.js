@@ -2,7 +2,7 @@ import { Cart } from "../models/Cart.js";
 import { Product } from "../models/Product.js";
 import { Order } from "../models/Order.js";
 import ApiResponse from "../utils/ApiResponse.js";
-import { processPayment } from "./paymentController.js";
+import { processPayment } from "./paymentcontroller.js";
 
 export async function placeOrder(req, res) {
     try {
