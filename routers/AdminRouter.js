@@ -73,7 +73,7 @@ router.post("/additem",async (req,res)=>{
         const result = await cloudinary.uploader.upload(reqfile.tempFilePath, {
             folder: "KidsEarth_Products",
         });
-        const data = {...req.body,image: result.secure_url,
+        const data = {...req.body,size: req.body.size.split(",").map(s => s.trim()),image: result.secure_url,
            status: req.body.status === "true" || req.body.status === true 
         };
         const newproduct = await Product.create(data);
